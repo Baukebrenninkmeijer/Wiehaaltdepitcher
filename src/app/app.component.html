@@ -20,10 +20,11 @@
      <h3>Spelers</h3>
      <div>
       <input [(ngModel)]="selectedPlayer.name" placeholder="Naam" type="text" class="form-control name-field">
-      <button *ngIf="selectedPlayer.id" (click)='playerSave()' type='submit'> Opslaan </button>
-      <button *ngIf="!selectedPlayer.id" (click)='playerAdd()' type='submit'> Toevoegen </button>
-    </div> 
-          <table class="table players">
+      <button *ngIf="selectedPlayer.id" (click)='playerSave()' type='submit' class="btn btn-primary editbutton">Opslaan</button>
+      <button *ngIf="selectedPlayer.id" (click)='playerSave()' type='submit' class="btn btn-danger editbutton">Remove</button>
+      <button *ngIf="!selectedPlayer.id" (click)='playerAdd()' type='submit' class="btn btn-normal">Toevoegen</button>
+    </div>
+      <table class="table players">
         <tr>
           <th>Naam</th>
           <th>Pitchers gehaald</th>
@@ -31,14 +32,16 @@
         <tr class="datacells" *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
           <td>{{player.name}}</td>
           <td>{{player.nr_of_pitchers}}</td>
-          <label class="switch">
-            <input type="checkbox" [(ngModel)]="player.selected">
-            <div class="slider round"></div>
-          </label>
+          <td>
+            <label class="switch">
+              <input type="checkbox" [(ngModel)]="player.selected">
+              <div class="slider round"></div>
+            </label>
+          </td>
         </tr>
       </table>
     </div>
-   
+
     <div class="col-xs-12 col-md-6">
       <h3>Pitcher geschiedenis</h3>
       <table class="table players">

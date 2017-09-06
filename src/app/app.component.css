@@ -8,6 +8,19 @@
   background-color: lightgrey;
 }
 
+.players > tr > th {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.players td {
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.row {
+  padding: 10px 0px
+}
+
 #wiedepitcherhaalt{
   margin-top: 25px;
   height: 250px;
@@ -20,6 +33,10 @@
 #wiedepitcherhaalt > h1 {
   font-size: 5em;
 
+}
+
+th {
+  border-top:none;
 }
 
 .resultbutton {
@@ -37,9 +54,17 @@
 }
 
 .name-field {
-  width:80%;
+  width:70%;
   margin-right: 0px;
   display: inline-block;
+}
+
+.editbutton {
+  width: 14%;
+  display: inline-block;
+  margin-top:-3px;
+  padding:0px;
+
 }
 
 /* The switch - the box around the slider *#/ ###################################### */
@@ -48,7 +73,7 @@
   display: inline-block;
   width: 60px;
   height: 34px;
-  top: 15px;
+  margin-top:5%;
 }
 
 /* Hide default HTML checkbox */
@@ -120,6 +145,11 @@ input:checked + .slider:before {
   height: 0px;
   position: relative;
   width: 40px;
+  margin-bottom:0px;
+}
+
+label {
+  margin-bottom:0px;
 }
 
 .material-switch > label::before {

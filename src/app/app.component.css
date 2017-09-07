@@ -8,6 +8,10 @@
   background-color: lightgrey;
 }
 
+.addbtn {
+  margin-top: -4px;
+}
+
 .players > tr > th {
   border-bottom: 1px solid #e9ecef;
 }
@@ -62,10 +66,12 @@ th {
 .editbutton {
   width: 14%;
   display: inline-block;
-  margin-top:-3px;
+  margin-top:-4px;
   padding:0px;
-
+  height: 38px;
 }
+
+
 
 /* The switch - the box around the slider *#/ ###################################### */
 .switch {

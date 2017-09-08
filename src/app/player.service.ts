@@ -14,13 +14,17 @@ export class PlayerService {
   constructor (
 	private http: Http
   ) {}
-  
+
   getPlayers(): Observable<Player[]> {
     return this.http.get('/api/players').map((res:Response) => {return res.json();});
   }
 
   updatePlayer(player:Player): any {
     return this.http.patch('/api/player/' + player.id ,{"player_name" : player.name}).map((res:Response) => {;return res.json();});
+  }
+
+  getActivePlayers(): Observable<Player[]> {
+    return this.http.get('/api/playersActive').map((res:Response) => {return res.json();})
   }
 
   addPlayer(player:Player): any {

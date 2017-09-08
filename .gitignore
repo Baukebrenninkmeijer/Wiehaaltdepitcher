@@ -2,3 +2,19 @@
 demodb01\.sqlite
 
 node_modules/
+
+src/app/app\.module\.js
+
+src/app/player\.service\.js
+
+src/app/app\.module\.js\.map
+
+src/app/app\.component\.js\.map
+
+src/app/app\.component\.js
+
+src/app/player\.service\.js\.map
+
+src/main\.js
+
+src/main\.js\.map

@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   name = 'wiehaaltdepitcher';
   title = 'Wie haalt de pitcher?';
   players: Player[];
+  activePlayers: Player[]
   pitchers: Pitcher[];
   selectedPlayer: Player;
   pitcherBoy: Player;
@@ -49,11 +50,11 @@ export class AppComponent implements OnInit {
   }
 
   onSelect(player: Player): void {
-    console.log(this.selectedPlayer);    
+    console.log(this.selectedPlayer);
     if(this.selectedPlayer && this.selectedPlayer.id == player.id) {
       this.selectedPlayer = new Player();
     } else {
-      this.selectedPlayer = player;      
+      this.selectedPlayer = player;
     }
   }
 
@@ -73,7 +74,7 @@ export class AppComponent implements OnInit {
 
   fetchedPitcher(player: Player): void {
     player.nr_of_pitchers += 1;
-    this.playerService.gotPitcher(this.pitcherBoy);    
+    this.playerService.gotPitcher(this.pitcherBoy);
     this.pitcherBoy = null;
     this.ngOnChange();
   }
@@ -86,9 +87,11 @@ export class AppComponent implements OnInit {
     }
     this.ngOnChange();
   }
+
   playerAdd() {
     this.playerService.addPlayer(this.selectedPlayer);
     this.getPlayers();
+    this.selectedPlayer = null;
   }
 
   playerSave() {

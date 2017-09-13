@@ -99,4 +99,9 @@ export class AppComponent implements OnInit {
     this.getPlayers();
   }
 
+  playerRemove(){
+    this.playerService.removePlayer(this.selectedPlayer);
+    this.getPlayers();
+  }
+
 }

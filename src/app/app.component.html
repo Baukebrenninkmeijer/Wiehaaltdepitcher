@@ -22,7 +22,7 @@
       <input [(ngModel)]="selectedPlayer.name" placeholder="Naam" type="text" class="form-control name-field">
       <button *ngIf="selectedPlayer.id" (click)='playerSave()' type='submit' class="btn btn-primary editbutton">Opslaan</button>
       <button *ngIf="selectedPlayer.id" (click)='playerSave()' type='submit' class="btn btn-danger editbutton">Remove</button>
-      <button *ngIf="!selectedPlayer.id" (click)='playerAdd()' type='submit' class="btn btn-normal">Toevoegen</button>
+      <button *ngIf="!selectedPlayer.id" (click)='playerAdd()' type='submit' class="btn btn-normal addbtn">Toevoegen</button>
     </div>
       <table class="table players">
         <tr>

@@ -38,4 +38,8 @@ export class PlayerService {
   gotPitcher(player:Player): any {
     return this.http.post('/api/log', {player_id: player.id}).subscribe();
   }
+
+  removePlayer(player:Player): any {
+    return this.http.delete('/api/removePlayer/' + player.id).subscribe();
+  }
 }

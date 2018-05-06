@@ -8,8 +8,12 @@
   background-color: lightgrey;
 }
 
-.addbtn {
-  margin-top: -4px;
+.editbutton {
+  padding: 0 5px;
+}
+
+#title {
+  text-align: center;
 }
 
 .players > tr > th {
@@ -21,17 +25,23 @@
   vertical-align: middle;
 }
 
-.row {
+/* .row {
   padding: 10px 0px
-}
+} */
 
-#wiedepitcherhaalt{
-  margin-top: 25px;
-  height: 250px;
+#wiedepitcherhaalt {
+  /* margin-top: 25px; */
+  /* height: 250px; */
   text-align: center;
   background-color: lightgrey;
   border-radius: 5px;
   padding: 10px;
+  margin: 0px;
+}
+
+#wiedepitcherhaalt > .resultbutton {
+  font-size: 1.15em;
+  min-height: 60px;
 }
 
 #wiedepitcherhaalt > h1 {
@@ -43,33 +53,33 @@ th {
   border-top:none;
 }
 
-.resultbutton {
+/* .resultbutton {
   position: relative;
   bottom: -70px;
   margin: 0px 25px
-}
+} */
 
 #edit {
   float:right
 }
 
-.top {
+/* .top {
   min-height: 300px;
-}
+} */
 
-.name-field {
+/* .name-field {
   width:70%;
   margin-right: 0px;
   display: inline-block;
-}
+} */
 
-.editbutton {
+/* .editbutton {
   width: 14%;
   display: inline-block;
   margin-top:-4px;
   padding:0px;
   height: 38px;
-}
+} */
 
 
 

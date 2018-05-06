@@ -8,7 +8,7 @@
     "build": "rimraf dist && webpack --config config/webpack.prod.js --bail",
     "serve": "lite-server -c=bs-config.json",
     "prestart": "npm run build",
-    "start": "webpack-dev-server --inline --progress --port 8080",
+    "start": "webpack-dev-server --inline --progress --port 3000",
     "pretest": "npm run build",
     "test": "karma start karma.webpack.conf.js",
     "pretest:once": "npm run build",
@@ -44,7 +44,7 @@
     "angular-in-memory-web-api": "~0.3.2",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
-    "sqlite3": "^3.1.9",
+    "sqlite3": "^3.1.13",
     "systemjs": "0.19.39",
     "zone.js": "^0.8.4"
   },

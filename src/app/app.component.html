@@ -1,28 +1,41 @@
 <div class="container wiehaalt">
   <div class="row">
-    <div class="col-xs-12">
+    <div id="title" class="col-12">
       <h1>{{title}}</h1>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-md-12">
-      <button class="btn btn-normal btn-lg btn-block" (click)="roll()">Haal pitcher</button>
-      <div id="wiedepitcherhaalt" *ngIf="this.pitcherBoy">
-        <h1>{{this.pitcherBoy.name}}</h1>
-        <button class="btn btn-success btn-lg resultbutton" (click)="fetchedPitcher(pitcherBoy)">Pitcher gehaald</button>
-        <button class="btn btn-danger btn-lg resultbutton" (click)="cowardFarmer(pitcherBoy)">CowardFarmer</button>
+    <div class="col-12 col-md-12">
+      <button class="btn btn-normal btn-lg btn-block" *ngIf="!this.pitcherBoy" (click)="roll()">Haal pitcher</button>
+      <div id="wiedepitcherhaalt" class="row justify-content-around" *ngIf="this.pitcherBoy">
+        <h1 class="col-12">{{this.pitcherBoy.name}}</h1>
+        <button class="btn btn-success btn-lg resultbutton col-auto col-lg-3" (click)="fetchedPitcher(pitcherBoy)">Pitcher gehaald</button>
+        <button class="btn btn-danger btn-lg resultbutton col-auto col-lg-3" (click)="cowardFarmer(pitcherBoy)">CowardFarmer</button>
       </div>
     </div>
   </div>
 
-  <div class="row"> <!--[hidden]="!this.editMode" class="row">-->
-    <div class="col-xs-12 col-md-6">
+  <!-- <div class="row"> <![hidden]="!this.editMode" class="row">-->
+  <div class="row">
+    <div class="col-12 col-lg-6">
      <h3>Spelers</h3>
-     <div>
-      <input [(ngModel)]="selectedPlayer.name" placeholder="Naam" type="text" class="form-control name-field">
-      <button *ngIf="selectedPlayer.id" (click)='playerSave()' type='submit' class="btn btn-primary editbutton">Opslaan</button>
-      <button *ngIf="selectedPlayer.id" (click)='playerSave()' type='submit' class="btn btn-danger editbutton">Remove</button>
-      <button *ngIf="!selectedPlayer.id" (click)='playerAdd()' type='submit' class="btn btn-normal addbtn">Toevoegen</button>
+     <div class="row">
+       <div class="col-8 col-md-8">
+         <input [(ngModel)]="selectedPlayer.name" placeholder="Naam" type="text" class="form-control name-field col-sm-12">
+      </div>
+      <div class="col-4 col-md-4" *ngIf="!selectedPlayer.id">
+        <button (click)='playerAdd()' type='submit' class="btn btn-normal addbutton col-12">Toevoegen</button>
+      </div>
+        <div class="col-2 editbutton" *ngIf="selectedPlayer.id">
+          <button (click)='playerSave()' type='submit' class="btn btn-primary col-12">
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="col-2 editbutton" *ngIf="selectedPlayer.id">
+          <button (click)='playerRemove()' type='submit' class="btn btn-danger col-12">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+      </div>
     </div>
       <table class="table players">
         <tr>
@@ -42,7 +55,7 @@
       </table>
     </div>
 
-    <div class="col-xs-12 col-md-6">
+    <div class="col-12 col-lg-6">
       <h3>Pitcher geschiedenis</h3>
       <table class="table players">
         <tr>
@@ -57,8 +70,9 @@
         </tr>
       </table>
     </div>
+  </div>
 
-</div>
+<!-- </div> -->
 
 <script>
   $("[name='my-checkbox']").bootstrapSwitch();

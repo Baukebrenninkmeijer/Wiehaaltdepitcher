@@ -89,6 +89,7 @@ export class AppComponent implements OnInit {
   }
 
   playerAdd() {
+    console.log(this.selectedPlayer.name)
     this.playerService.addPlayer(this.selectedPlayer);
     this.getPlayers();
     this.selectedPlayer = null;
